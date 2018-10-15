@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "588279115297",
+    "firebase_url": "https://mobileprog-1ff13.firebaseio.com",
+    "project_id": "mobileprog-1ff13",
+    "storage_bucket": "mobileprog-1ff13.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:588279115297:android:0fd12c4e587f3e1b",
+        "android_client_info": {
+          "package_name": "com.example.windows10.nyobadua"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "588279115297-ca6j53s7tuvfmnfhnp7dg8a53rhlcg8h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXooxn4_dEv_GSKuE58v58GLB6mXJpgTU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
