@@ -46,7 +46,7 @@
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/regUsername"
-        app:layout_constraintVertical_bias="0.142" />
+        app:layout_constraintVertical_bias="0.143" />
 
     <EditText
         android:id="@+id/regMhs1"
@@ -56,7 +56,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="196dp"
         android:background="@drawable/reg_edittext_style"
         android:ems="10"
         android:hint="Mahasiswa 1"
@@ -64,7 +64,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/regPasw" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/regMhs2"
@@ -74,7 +74,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="320dp"
         android:background="@drawable/reg_edittext_style"
         android:ems="10"
         android:hint="Mahasiswa 3"
@@ -82,7 +82,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/regMhs3" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/regMhs3"
@@ -92,7 +92,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="116dp"
+        android:layout_marginTop="248dp"
         android:background="@drawable/reg_edittext_style"
         android:ems="10"
         android:hint="Mahasiswa 2"
@@ -100,7 +100,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/regPasw" />
+        app:layout_constraintTop_toTopOf="@+id/textView" />
 
     <EditText
         android:id="@+id/company"
@@ -110,7 +110,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="284dp"
+        android:layout_marginTop="436dp"
         android:background="@drawable/reg_edittext_style"
         android:ems="10"
         android:hint="Perusahaan"
@@ -118,7 +118,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/regPasw" />
+        app:layout_constraintTop_toTopOf="@+id/textView" />
 
     <EditText
         android:id="@+id/dosen"
@@ -128,7 +128,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="228dp"
+        android:layout_marginTop="384dp"
         android:background="@drawable/reg_edittext_style"
         android:ems="10"
         android:hint="Dosen"
@@ -136,24 +136,24 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/regPasw" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnsignup"
         android:layout_width="105dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="176dp"
+        android:layout_marginTop="492dp"
         android:background="@drawable/reg_btn_style"
         android:text="Register"
         android:textColor="#ffffff"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/regMhs2" />
+        app:layout_constraintTop_toTopOf="@+id/textView" />
 
     <TextView
         android:id="@+id/textView"
@@ -176,20 +176,20 @@
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="14dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Belum punya account?"
+        android:text="Sudah punya akun?"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.358"
+        app:layout_constraintHorizontal_bias="0.427"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/button"
-        app:layout_constraintVertical_bias="0.846" />
+        app:layout_constraintTop_toTopOf="@+id/btnsignup"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/textView3"
@@ -206,7 +206,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.74"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/button"
-        app:layout_constraintVertical_bias="0.846" />
+        app:layout_constraintTop_toTopOf="@+id/btnsignup"
+        app:layout_constraintVertical_bias="1.0" />
 
 </android.support.constraint.ConstraintLayout>

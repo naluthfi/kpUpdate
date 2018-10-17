@@ -3013,7 +3013,7 @@ public final class R {
     public static final int beginning=0x7f070020;
     public static final int blocking=0x7f070021;
     public static final int bottom=0x7f070022;
-    public static final int button=0x7f070023;
+    public static final int btnsignup=0x7f070023;
     public static final int button2=0x7f070024;
     public static final int buttonPanel=0x7f070025;
     public static final int center=0x7f070026;
@@ -3179,19 +3179,20 @@ public final class R {
     public static final int abc_search_view=0x7f090019;
     public static final int abc_select_dialog_material=0x7f09001a;
     public static final int abc_tooltip=0x7f09001b;
-    public static final int activity_regis=0x7f09001c;
-    public static final int layout=0x7f09001d;
-    public static final int login=0x7f09001e;
-    public static final int notification_action=0x7f09001f;
-    public static final int notification_action_tombstone=0x7f090020;
-    public static final int notification_template_custom_big=0x7f090021;
-    public static final int notification_template_icon_group=0x7f090022;
-    public static final int notification_template_part_chronometer=0x7f090023;
-    public static final int notification_template_part_time=0x7f090024;
-    public static final int select_dialog_item_material=0x7f090025;
-    public static final int select_dialog_multichoice_material=0x7f090026;
-    public static final int select_dialog_singlechoice_material=0x7f090027;
-    public static final int support_simple_spinner_dropdown_item=0x7f090028;
+    public static final int activity_home=0x7f09001c;
+    public static final int activity_regis=0x7f09001d;
+    public static final int layout=0x7f09001e;
+    public static final int login=0x7f09001f;
+    public static final int notification_action=0x7f090020;
+    public static final int notification_action_tombstone=0x7f090021;
+    public static final int notification_template_custom_big=0x7f090022;
+    public static final int notification_template_icon_group=0x7f090023;
+    public static final int notification_template_part_chronometer=0x7f090024;
+    public static final int notification_template_part_time=0x7f090025;
+    public static final int select_dialog_item_material=0x7f090026;
+    public static final int select_dialog_multichoice_material=0x7f090027;
+    public static final int select_dialog_singlechoice_material=0x7f090028;
+    public static final int support_simple_spinner_dropdown_item=0x7f090029;
   }
   public static final class mipmap {
     public static final int ic_launcher=0x7f0a0000;

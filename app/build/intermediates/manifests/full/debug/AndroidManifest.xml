@@ -25,6 +25,7 @@
             </intent-filter>
         </activity>
         <activity android:name="com.example.windows10.nyobadua.regis" />
+        <activity android:name="com.example.windows10.nyobadua.home" />
     </application>
 
 </manifest>
