@@ -1,4 +1,4 @@
-#Thu Oct 18 02:00:53 WIB 2018
+#Thu Oct 18 05:41:10 WIB 2018
 base.0=/home/luthfi/AndroidStudioProjects/kpUpdate/app/build/intermediates/transforms/dexMerger/debug/0
 path.0=classes.dex
 renamed.0=classes.dex
