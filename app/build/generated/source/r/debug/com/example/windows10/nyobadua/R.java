@@ -3013,8 +3013,8 @@ public final class R {
     public static final int beginning=0x7f070020;
     public static final int blocking=0x7f070021;
     public static final int bottom=0x7f070022;
-    public static final int btnsignup=0x7f070023;
-    public static final int button2=0x7f070024;
+    public static final int btnlogin=0x7f070023;
+    public static final int btnsignup=0x7f070024;
     public static final int buttonPanel=0x7f070025;
     public static final int center=0x7f070026;
     public static final int center_horizontal=0x7f070027;

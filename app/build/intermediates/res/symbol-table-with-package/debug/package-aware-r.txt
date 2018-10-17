@@ -682,8 +682,8 @@ int id barrier 0x7f07001f
 int id beginning 0x7f070020
 int id blocking 0x7f070021
 int id bottom 0x7f070022
-int id btnsignup 0x7f070023
-int id button2 0x7f070024
+int id btnlogin 0x7f070023
+int id btnsignup 0x7f070024
 int id buttonPanel 0x7f070025
 int id center 0x7f070026
 int id center_horizontal 0x7f070027
