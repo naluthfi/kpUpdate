@@ -64,7 +64,7 @@ public class regis extends AppCompatActivity {
             final String companyName,
             final String dosenName
     ) {
-        try {
+        try { //192.168.43.7
             String url = "http://10.122.14.219/kpupdate/public/auth/signup?" +
                     "username="+ username +"&" +
                     "password="+ password +"&" +
@@ -88,49 +88,37 @@ public class regis extends AppCompatActivity {
 
         @Override
         protected String doInBackground(String... strings) {
+            BufferedReader reader=null;
+            String text = "";
             try {
                 URL url = new URL(strings[0]);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                 conn.setRequestMethod("POST");
-                //conn.setRequestProperty("Content-Type", "application/json;charset=UTF-8");
-                //conn.setRequestProperty("Accept","application/json");
                 conn.setUseCaches(false);
                 conn.setAllowUserInteraction(false);
 
                 Log.i("STATUS", String.valueOf(conn.getResponseCode()));
                 Log.i("MSG" , conn.getResponseMessage());
 
-                BufferedReader br;
-                if (200 <= conn.getResponseCode() && conn.getResponseCode() <= 299) {
-                    br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-                } else {
-                    br = new BufferedReader(new InputStreamReader(conn.getErrorStream()));
+                reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+                StringBuilder sb = new StringBuilder();
+                String line = null;
+
+                while((line = reader.readLine()) != null)
+                {
+                    // Append server response in string
+                    sb.append(line + "\n");
                 }
-                StringBuilder sb;
-                sb = new StringBuilder();
-                String output;
-                while ((output = br.readLine()) != null) {
-                    sb.append(output);
-                }
-                Toast.makeText(getApplicationContext(), sb.toString(), Toast.LENGTH_LONG
-                ).show();
-                JSONObject jsonObject = new JSONObject(sb.toString());
-                String result;
-                if (jsonObject.getInt("status") == 201) {
-                    result = "success";
-                    System.out.println("success");
-                } else {
-                    result = jsonObject.getString("message");
-                    System.out.println(jsonObject.getString("message"));
-                }
+                text = sb.toString();
+
                 conn.disconnect();
-                return result;
+
             } catch (Exception e) {
                 Toast.makeText(getApplicationContext(), e.toString(), Toast.LENGTH_LONG
                 ).show();
                 e.printStackTrace();
-                return e.toString();
             }
+            return (text);
         }
     }
 }
