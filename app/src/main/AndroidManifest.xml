@@ -18,6 +18,7 @@
         </activity>
         <activity android:name=".regis" />
         <activity android:name=".home"></activity>
+        <activity android:name=".kamera"></activity>
     </application>
 
     <uses-permission android:name="android.permission.INTERNET" />

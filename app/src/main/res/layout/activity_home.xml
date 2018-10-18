@@ -47,8 +47,8 @@
         app:layout_constraintTop_toTopOf="@+id/textView9"
         app:layout_constraintVertical_bias="0.786" />
 
-    <ImageView
-        android:id="@+id/imageView2"
+    <ImageButton
+        android:id="@+id/imagebutton"
         android:layout_width="108dp"
         android:layout_height="117dp"
         android:layout_marginBottom="8dp"

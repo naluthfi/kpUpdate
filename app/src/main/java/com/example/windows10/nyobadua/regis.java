@@ -1,5 +1,6 @@
 package com.example.windows10.nyobadua;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -27,6 +28,7 @@ public class regis extends AppCompatActivity {
     private EditText dosen;
     private Button btnsignup;
     private TextView textView3;
+    String popup;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,7 +40,7 @@ public class regis extends AppCompatActivity {
         regMhs3 = (EditText) findViewById(R.id.regMhs3);
         company = (EditText) findViewById(R.id.company);
         dosen = (EditText) findViewById(R.id.dosen);
-        textView3 = (TextView) findViewById(R.id.textView3);
+        //textView3 = (TextView) findViewById(R.id.textView3);
         btnsignup = (Button) findViewById(R.id.btnsignup);
         btnsignup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -94,7 +96,7 @@ public class regis extends AppCompatActivity {
                 URL url = new URL(strings[0]);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                 conn.setRequestMethod("POST");
-                conn.setUseCaches(false);
+                conn.setUseCaches(true);
                 conn.setAllowUserInteraction(false);
 
                 Log.i("STATUS", String.valueOf(conn.getResponseCode()));
@@ -110,7 +112,21 @@ public class regis extends AppCompatActivity {
                     sb.append(line + "\n");
                 }
                 text = sb.toString();
-
+                JSONObject data = new JSONObject(text);
+                String status = data.getString("status");
+                int myNum=0;
+                myNum = Integer.parseInt(status);
+                if (myNum==201){
+                    popup = "Registrasi berhasil. Akun anda dalam proses validasi.";
+                    Intent intent = new Intent(regis.this,MainActivity.class);
+                    regis.this.startActivity(intent);
+                }
+                else if (myNum==422){
+                    popup = "Registrasi gagal. Username anda sudah digunakan.";
+                }
+                else{
+                    popup = "Registrasi Gagal. Silahkan coba lagi.";
+                }
                 conn.disconnect();
 
             } catch (Exception e) {
@@ -118,7 +134,7 @@ public class regis extends AppCompatActivity {
                 ).show();
                 e.printStackTrace();
             }
-            return (text);
+            return (popup);
         }
     }
 }
