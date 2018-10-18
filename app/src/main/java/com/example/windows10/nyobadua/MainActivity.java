@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import org.json.JSONObject;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -19,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText loguser;
     private EditText logpass;
     private Button btnlogin;
+    String popup;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,8 +35,6 @@ public class MainActivity extends AppCompatActivity {
                 String username_in = loguser.getText().toString();
                 String password_in = logpass.getText().toString();
                 sendPostLogin(username_in, password_in);
-                Intent intent = new Intent(MainActivity.this,home.class);
-                MainActivity.this.startActivity(intent);
             }
         });
     }
@@ -42,7 +43,8 @@ public class MainActivity extends AppCompatActivity {
             final String password
     ) {
         try { //192.168.43.7
-            String url = "http://10.122.14.219/kpupdate/public/auth/signin?" +
+            //10.122.14.219
+            String url = "http://192.168.43.7/kpupdate/public/auth/signin?" +
                     "username="+ username +"&" +
                     "password="+ password;
             String result = new LoginRequest().execute(url).get();
@@ -82,7 +84,18 @@ public class MainActivity extends AppCompatActivity {
                     sb.append(line + "\n");
                 }
                 text = sb.toString();
-
+                JSONObject data = new JSONObject(text);
+                String status = data.getString("status");
+                int myNum=0;
+                myNum = Integer.parseInt(status);
+                if (myNum==200){
+                    popup = "Login Berhasil";
+                    Intent intent = new Intent(MainActivity.this,home.class);
+                    MainActivity.this.startActivity(intent);
+                }
+                else{
+                    popup = "Login Gagal";
+                }
                 conn.disconnect();
 
             } catch (Exception e) {
@@ -90,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
                 ).show();
                 e.printStackTrace();
             }
-            return (text);
+            return (popup);
         }
     }
 

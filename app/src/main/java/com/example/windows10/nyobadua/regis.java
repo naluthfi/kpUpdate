@@ -65,7 +65,7 @@ public class regis extends AppCompatActivity {
             final String dosenName
     ) {
         try { //192.168.43.7
-            String url = "http://10.122.14.219/kpupdate/public/auth/signup?" +
+            String url = "http://192.168.43.7/kpupdate/public/auth/signup?" +
                     "username="+ username +"&" +
                     "password="+ password +"&" +
                     "dosen="+ dosenName +"&" +
