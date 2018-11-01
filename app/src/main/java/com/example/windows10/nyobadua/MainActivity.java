@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText loguser;
     private EditText logpass;
     private Button btnlogin;
+    private Button button;
     String popup;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +29,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.login);
         loguser = (EditText) findViewById(R.id.loguser);
         logpass = (EditText) findViewById(R.id.logpass);
+        button = (Button) findViewById(R.id.button);
+        button = (Button) findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,MapsActivity.class);
+                MainActivity.this.startActivity(intent);
+            }
+        });
         btnlogin = (Button) findViewById(R.id.btnlogin);
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -111,4 +121,5 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this,regis.class);
         MainActivity.this.startActivity(intent);
     }
+
 }

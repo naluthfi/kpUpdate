@@ -9,10 +9,19 @@ import android.widget.ImageButton;
 
 public class home extends AppCompatActivity {
 private ImageButton imageButton;
+private Button laporan;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        laporan = (Button) findViewById(R.id.laporan);
+        laporan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(home.this,laporan.class);
+                home.this.startActivity(intent);
+            }
+        });
         imageButton = (ImageButton) findViewById(R.id.imagebutton);
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -22,6 +31,7 @@ private ImageButton imageButton;
                 home.this.startActivity(intent);
             }
         });
+
 
     }
 
