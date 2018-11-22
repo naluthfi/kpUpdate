@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btnlogin;
     private Button button;
     String popup;
+    SessionManager sessionManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
                 sendPostLogin(username_in, password_in);
             }
         });
+        //sessionManager = new SessionManager(getApplicationContext());
     }
     public void sendPostLogin(
             final String username,
@@ -102,6 +104,7 @@ public class MainActivity extends AppCompatActivity {
                     popup = "Login Berhasil";
                     Intent intent = new Intent(MainActivity.this,home.class);
                     MainActivity.this.startActivity(intent);
+                    //sessionManager.createSession(loguser.getText().toString());
                 }
                 else{
                     popup = "Login Gagal";
