@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/luthfi/AndroidStudioProjects/kpUpdate/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-or/values-or.xml",
+            "outputFile": "/home/luthfi/Documents/backupLinux/luthfi/AndroidStudioProjects/kpUpdate/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-or/values-or.xml",
             "map": [
                 {
                     "source": "/home/luthfi/.gradle/caches/transforms-1/files-1.1/play-services-basement-16.0.1.aar/f29e26c00a599d099deb54af24b61096/res/values-or/values.xml",

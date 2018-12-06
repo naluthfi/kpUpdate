@@ -1,5 +1,6 @@
 package com.example.windows10.nyobadua;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import android.content.SharedPreferences;
 
 import org.json.JSONObject;
 
@@ -23,23 +25,24 @@ public class MainActivity extends AppCompatActivity {
     private Button btnlogin;
     private Button button;
     String popup;
-    SessionManager sessionManager;
+    //SessionManager sessionManager;
+    public static final String MyPREFERENCES = "MyPrefs" ;
+    public static final String Uname = "UnameKey";
+    public static final String Dosen = "DosenKey";
+    public static final String PT = "PTKey";
+    public static final String anggota_1 = "Anggota1Key";
+    public static final String anggota_2 = "Anggota2Key";
+    public static final String anggota_3 = "Anggota3Key";
+    SharedPreferences sharedpreferences;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
         loguser = (EditText) findViewById(R.id.loguser);
         logpass = (EditText) findViewById(R.id.logpass);
-        button = (Button) findViewById(R.id.button);
-        button = (Button) findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,MapsActivity.class);
-                MainActivity.this.startActivity(intent);
-            }
-        });
         btnlogin = (Button) findViewById(R.id.btnlogin);
+        sharedpreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,6 +51,16 @@ public class MainActivity extends AppCompatActivity {
                 sendPostLogin(username_in, password_in);
             }
         });
+
+        button = (Button) findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,MapsActivity.class);
+                MainActivity.this.startActivity(intent);
+            }
+        });
+
         //sessionManager = new SessionManager(getApplicationContext());
     }
     public void sendPostLogin(
@@ -56,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
     ) {
         try { //192.168.43.7
             //10.122.14.219
-            String url = "http://192.168.43.7/kpupdate/public/auth/signin?" +
+            String url = "http://pot-valiant-pine.000webhostapp.com/auth/signin?" +
                     "username="+ username +"&" +
                     "password="+ password;
             String result = new LoginRequest().execute(url).get();
@@ -98,13 +111,28 @@ public class MainActivity extends AppCompatActivity {
                 text = sb.toString();
                 JSONObject data = new JSONObject(text);
                 String status = data.getString("status");
+                String uname = data.getString("username");
+                String dosen = data.getString("dosen");
+                String perusahaan = data.getString("perusahaan");
+                String anggota1 = data.getString("anggota_kelompok1");
+                String anggota2 = data.getString("anggota_kelompok2");
+                String anggota3 = data.getString("anggota_kelompok3");
                 int myNum=0;
                 myNum = Integer.parseInt(status);
                 if (myNum==200){
                     popup = "Login Berhasil";
+                    SharedPreferences.Editor editor = sharedpreferences.edit();
+
+                    editor.putString(Uname, uname);
+                    editor.putString(Dosen, dosen);
+                    editor.putString(PT, perusahaan);
+                    editor.putString(anggota_1, anggota1);
+                    editor.putString(anggota_2, anggota2);
+                    editor.putString(anggota_3, anggota3);
+                    editor.commit();
                     Intent intent = new Intent(MainActivity.this,home.class);
                     MainActivity.this.startActivity(intent);
-                    //sessionManager.createSession(loguser.getText().toString());
+
                 }
                 else{
                     popup = "Login Gagal";

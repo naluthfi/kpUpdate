@@ -10,23 +10,22 @@ public class SessionManager {
     SharedPreferences pref;
     SharedPreferences.Editor editor;
     Context context;
-    int mode = 0;
 
-    private static final String pref_name = "crudpref";
+    private static final String app_name = "KP-Update";
     private static final String is_login = "islogin";
-    public static final String keyuname = "uname";
-    public static final String keycompany = "company";
+    public static final String keyUname = "uname";
+    public static final String keyCompany = "company";
 
     public SessionManager(Context context) {
         this.context = context;
-        pref = context.getSharedPreferences(pref_name, mode);
+        //pref = context.getSharedPreferences(app_name, mode);
         editor = pref.edit();
     }
 
     public void createSession(String username, String company){
         editor.putBoolean(is_login, true);
-        editor.putString(keyuname, username);
-        editor.putString(keycompany, company);
+        editor.putString(keyUname, username);
+        editor.putString(keyCompany, company);
         editor.commit();
     }
 
@@ -59,8 +58,8 @@ public class SessionManager {
 
     public HashMap<String, String> getUserDetails(){
         HashMap<String, String> user = new HashMap<String, String>();
-        user.put(pref_name, pref.getString(pref_name, null));
-        user.put(keyuname, pref.getString(keyuname, null));
+        user.put(app_name, pref.getString(app_name, null));
+        user.put(keyUname, pref.getString(keyUname, null));
         return user;
     }
 }

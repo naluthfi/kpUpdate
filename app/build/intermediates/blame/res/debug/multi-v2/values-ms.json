@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/luthfi/AndroidStudioProjects/kpUpdate/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ms/values-ms.xml",
+            "outputFile": "/home/luthfi/Documents/backupLinux/luthfi/AndroidStudioProjects/kpUpdate/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ms/values-ms.xml",
             "map": [
                 {
                     "source": "/home/luthfi/.gradle/caches/transforms-1/files-1.1/play-services-base-16.0.1.aar/76436cb094cacd409c3ae07692b7ff90/res/values-ms/values.xml",

@@ -35,21 +35,21 @@ public final class R {
     public static final class drawable {
         private drawable() {}
 
-        public static final int common_full_open_on_phone = 0x7f060057;
-        public static final int powered_by_google_dark = 0x7f06007c;
-        public static final int powered_by_google_light = 0x7f06007d;
+        public static final int common_full_open_on_phone = 0x7f060058;
+        public static final int powered_by_google_dark = 0x7f060080;
+        public static final int powered_by_google_light = 0x7f060081;
     }
     public static final class id {
         private id() {}
 
         public static final int adjust_height = 0x7f07001b;
         public static final int adjust_width = 0x7f07001c;
-        public static final int hybrid = 0x7f070050;
-        public static final int none = 0x7f07006d;
-        public static final int normal = 0x7f07006e;
-        public static final int satellite = 0x7f070081;
-        public static final int terrain = 0x7f0700a6;
-        public static final int wrap_content = 0x7f0700bd;
+        public static final int hybrid = 0x7f070051;
+        public static final int none = 0x7f070073;
+        public static final int normal = 0x7f070074;
+        public static final int satellite = 0x7f070087;
+        public static final int terrain = 0x7f0700ac;
+        public static final int wrap_content = 0x7f0700c4;
     }
     public static final class integer {
         private integer() {}

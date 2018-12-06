@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/luthfi/AndroidStudioProjects/kpUpdate/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v21/values-v21.xml",
+            "outputFile": "/home/luthfi/Documents/backupLinux/luthfi/AndroidStudioProjects/kpUpdate/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v21/values-v21.xml",
             "map": [
                 {
                     "source": "/home/luthfi/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/309ca7dfa8eee789b70261540e43a422/res/values-v21/values-v21.xml",

@@ -22,8 +22,11 @@ public class regis extends AppCompatActivity {
     private EditText regUsername;
     private EditText regPasw;
     private EditText regMhs1;
+    private EditText nrpMhs1;
     private EditText regMhs2;
+    private EditText nrpMhs2;
     private EditText regMhs3;
+    private EditText nrpMhs3;
     private EditText company;
     private EditText dosen;
     private Button btnsignup;
@@ -35,9 +38,12 @@ public class regis extends AppCompatActivity {
         setContentView(R.layout.activity_regis);
         regUsername = (EditText) findViewById(R.id.regUsername);
         regPasw = (EditText) findViewById(R.id.regPasw);
-        regMhs1 = (EditText) findViewById(R.id.regMhs1);
-        regMhs2 = (EditText) findViewById(R.id.regMhs2);
-        regMhs3 = (EditText) findViewById(R.id.regMhs3);
+        regMhs1 = (EditText) findViewById(R.id.mhs1);
+        nrpMhs1 = (EditText) findViewById(R.id.nrp1);
+        regMhs2 = (EditText) findViewById(R.id.mhs2);
+        nrpMhs2 = (EditText) findViewById(R.id.nrp2);
+        regMhs3 = (EditText) findViewById(R.id.mhs3);
+        nrpMhs3 = (EditText) findViewById(R.id.nrp3);
         company = (EditText) findViewById(R.id.company);
         dosen = (EditText) findViewById(R.id.dosen);
         //textView3 = (TextView) findViewById(R.id.textView3);
@@ -48,11 +54,14 @@ public class regis extends AppCompatActivity {
                 String username_in = regUsername.getText().toString();
                 String password_in = regPasw.getText().toString();
                 String mhs1 = regMhs1.getText().toString();
+                String nrp1 = nrpMhs1.getText().toString();
                 String mhs2 = regMhs2.getText().toString();
+                String nrp2 = nrpMhs2.getText().toString();
                 String mhs3 = regMhs3.getText().toString();
+                String nrp3 = nrpMhs3.getText().toString();
                 String companyName = company.getText().toString();
                 String dosenName = dosen.getText().toString();
-                sendPost(username_in, password_in, mhs1, mhs2, mhs3, companyName, dosenName);
+                sendPost(username_in, password_in, mhs1, nrp1, mhs2, nrp2, mhs3, nrp3, companyName, dosenName);
             }
         });
     }
@@ -61,20 +70,26 @@ public class regis extends AppCompatActivity {
             final String username,
             final String password,
             final String mhs1,
+            final String nrp1,
             final String mhs2,
+            final String nrp2,
             final String mhs3,
+            final String nrp3,
             final String companyName,
             final String dosenName
     ) {
         try { //192.168.43.7
-            String url = "http://192.168.43.7/kpupdate/public/auth/signup?" +
+            String url = "http://pot-valiant-pine.000webhostapp.com/auth/signup?" +
                     "username="+ username +"&" +
                     "password="+ password +"&" +
                     "dosen="+ dosenName +"&" +
                     "perusahaan="+ companyName +"&" +
                     "anggota_kelompok1="+ mhs1 +"&" +
+                    "nrp_anggota_kelompok1="+ nrp1 +"&" +
                     "anggota_kelompok2="+ mhs2 +"&" +
-                    "anggota_kelompok3="+ mhs3;
+                    "nrp_anggota_kelompok2="+ nrp2 +"&" +
+                    "anggota_kelompok3="+ mhs3 +"&" +
+                    "nrp_anggota_kelompok3="+ nrp3;
             String result = new SignUpRequest().execute(url).get();
             Toast.makeText(getApplicationContext(), result, Toast.LENGTH_LONG
             ).show();
@@ -87,7 +102,6 @@ public class regis extends AppCompatActivity {
 
     private class SignUpRequest extends AsyncTask<String, Void, String>
     {
-
         @Override
         protected String doInBackground(String... strings) {
             BufferedReader reader=null;

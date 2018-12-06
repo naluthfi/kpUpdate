@@ -1,4 +1,19 @@
 <resources>
-    <string name="app_name">nyobadua</string>
+    <string name="app_name">KPUpdate - Mahasiswa</string>
     <string name="title_activity_maps">Map</string>
+    <string name="title_activity_laporan">laporan</string>
+    <string name="username">username</string>
+    <string name="password">password</string>
+    <string name="mahasiswa1">mahasiswa 1</string>
+    <string name="nrp1">nrp 1</string>
+    <string name="mahasiswa2">mahasiswa 2</string>
+    <string name="nrp2">nrp 2</string>
+    <string name="mahasiswa3">mahasiswa 3</string>
+    <string name="nrp3">nrp 3</string>
+    <string name="dosen">dosen pembimbing</string>
+    <string name="perusahaan">perusahaan</string>
+    <string name="register">register</string>
+    <string name="register_form_text">Register Here</string>
+    <string name="no_field_can_be_empty">No field can be empty</string>
+    <string name="here_is_values">Here is values: %1$s</string>
 </resources>
